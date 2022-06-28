@@ -1,0 +1,22 @@
+{
+    "name": "lampenwelt/module-integration",
+    "description": "Order integration module",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Yasin Cengiz Coskun",
+            "email": "y.cengiz.coskun@gmal.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Lampenwelt\\Integration\\": ""
+        }
+    }
+}

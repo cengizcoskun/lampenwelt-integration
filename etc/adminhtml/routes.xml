@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route id="erp_sync" frontName="erp_sync">
+			<module name="Lampenwelt_Integration" before="Magento_Backend"/>
+		</route>
+		<route frontName="lampenwelt_integration" id="lampenwelt_integration">
+			<module before="Magento_Backend" name="Lampenwelt_Integration"/>
+		</route>
+	</router>
+</config>

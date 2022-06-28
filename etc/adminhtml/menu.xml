@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Lampenwelt::top_level" title="Lampenwelt" module="Lampenwelt_Integration" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Lampenwelt_Integration::items_status" title="items status" module="Lampenwelt_Integration" sortOrder="9999" resource="Lampenwelt_Integration::items_status" parent="Lampenwelt::top_level" action="erp_sync/items/status"/>
+		<add id="Lampenwelt_Integration::lampenwelt_integration_orderintegrationlogs" title="OrderIntegrationLogs" module="Lampenwelt_Integration" sortOrder="9999" resource="Magento_Backend::content" parent="Lampenwelt::top_level" action="lampenwelt_integration/orderintegrationlogs/index"/>
+	</menu>
+</config>

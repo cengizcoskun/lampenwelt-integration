@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="IntegrationHistory" xsi:type="object">Lampenwelt\Integration\Console\Command\IntegrationHistory</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Lampenwelt\Integration\Api\OrderIntegrationLogsRepositoryInterface" type="Lampenwelt\Integration\Model\OrderIntegrationLogsRepository"/>
+	<preference for="Lampenwelt\Integration\Api\Data\OrderIntegrationLogsInterface" type="Lampenwelt\Integration\Model\OrderIntegrationLogs"/>
+	<preference for="Lampenwelt\Integration\Api\Data\OrderQueueInterface" type="Lampenwelt\Integration\Model\OrderQueue"/>
+	<preference for="Lampenwelt\Integration\Api\Data\OrderIntegrationLogsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Lampenwelt\Integration\Model\ResourceModel\OrderIntegrationLogs\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">lampenwelt_integration_orderintegrationlogs</argument>
+			<argument name="resourceModel" xsi:type="string">Lampenwelt\Integration\Model\ResourceModel\OrderIntegrationLogs\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="lampenwelt_integration_orderintegrationlogs_listing_data_source" xsi:type="string">Lampenwelt\Integration\Model\ResourceModel\OrderIntegrationLogs\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+		<arguments>
+			<argument name="columns" xsi:type="array">
+				<item name="order_integration_status" xsi:type="string">sales_order.order_integration_status</item>
+			</argument>
+		</arguments>
+	</virtualType>
+</config>

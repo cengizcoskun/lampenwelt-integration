@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="lampenwelt.integration" type="topic" connection="amqp">
+        <binding id="lampenweltIntegrationOrderBinding" topic="lampenwelt.integration.order" destinationType="queue" destination="lampenwelt.integration.order"/>
+    </exchange>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="lampenwelt_integration_orderintegrationlogs" resource="default" engine="innodb" comment="lampenwelt_integration_orderintegrationlogs Table">
+		<column xsi:type="int" name="orderintegrationlogs_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="orderintegrationlogs_id"/>
+		</constraint>
+		<column name="order_id" nullable="false" xsi:type="int" comment="Order ERP Integration Logs" identity="false"/>
+		<column name="timestamp" nullable="false" xsi:type="int" comment="Timestamp" identity="false"/>
+		<column name="erp_return_code" nullable="false" xsi:type="int" comment="ERP Return Code" identity="false"/>
+	</table>
+	<table name="sales_order">
+		<column name="order_integration_status" nullable="true" xsi:type="varchar" comment="Order Integration Status" length="255"/>
+	</table>
+	<table name="sales_order_grid">
+		<column name="order_integration_status" nullable="true" xsi:type="varchar" comment="Order Integration Status" length="255"/>
+	</table>
+</schema>
